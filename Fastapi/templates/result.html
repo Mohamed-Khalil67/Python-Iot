@@ -1,0 +1,20 @@
+{% block content %}
+  <div class="card-header">
+    <h3 class="card-title text-center mb-3">Hatespeech Evaluator Tool</h3>
+  </div>
+  <div class="card-body text-right">
+    <p class="card-text text-justify">Your message :</pclass="card-text>
+    <p class="card-text text-justify text-muted">
+        {{text}}
+    </p>
+    <p class="card-text text-justify">{{sentence}}</p>
+    <form action="{{url_for('predict')}}" method="POST">
+        <div class="form-group mt-3">
+            <textarea class="form-control" type="text" name="text" rows="5" placeholder="Type your message here."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-dark">Predict again</button>
+    </form>
+  </div>
+
+{% endblock %}
+
